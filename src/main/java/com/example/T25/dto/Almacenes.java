@@ -28,7 +28,7 @@ public class Almacenes {
 	
 	@OneToMany
 	@JoinColumn(name="almacen_id")
-	private List<Almacenes> almacen_id;
+	private List<Cajas> cajas;
 	
 	
 	//Constructores
@@ -70,19 +70,19 @@ public class Almacenes {
 	}
 
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Almacenes")
-	public List<Almacenes> getAlmacen_id() {
-		return almacen_id;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "almacen_id")
+	public List<Cajas> getAlmacen_id() {
+		return cajas;
 	}
 
-	public void setAlmacen_id(List<Almacenes> almacen_id) {
-		this.almacen_id = almacen_id;
+	public void setAlmacen_id(List<Cajas> caja) {
+		this.cajas = caja;
 	}
 
 
 	//To string personalizado
 	@Override
 	public String toString() {
-		return "Almacenes [id = " + id +", lugar = " + lugar +", capacidad " + capacidad + ", almacen id " + almacen_id + " ] ";
+		return "Almacenes [id = " + id +", lugar = " + lugar +", capacidad " + capacidad + " ] ";
 	}
 }
